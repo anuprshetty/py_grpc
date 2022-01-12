@@ -22,7 +22,7 @@ This is a simple gRPC which works like a normal function call. It sends a single
 
 ### Unary gRPC Setup and Execution
 
-- cd unery_grpc
+- cd unary_grpc
 - [OPTIONAL] python -m grpc_tools.protoc --proto_path=. ./unary.proto --python_out=. --grpc_python_out=.
 - In one terminal --> python unary_server.py
 - In another terminal --> python unary_client.py
