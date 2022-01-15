@@ -22,10 +22,9 @@ This is a simple gRPC which works like a normal function call. It sends a single
 
 ### Unary gRPC Setup and Execution
 
-- cd unery_grpc
-- [OPTIONAL] python -m grpc_tools.protoc --proto_path=. ./unary.proto --python_out=. --grpc_python_out=.
-- In one terminal --> python unary_server.py
-- In another terminal --> python unary_client.py
+- [OPTIONAL] python -m grpc_tools.protoc --proto_path=./protobufs ./protobufs/unary.proto --python_out=./unary_grpc --grpc_python_out=./unary_grpc
+- In one terminal --> python ./unary_grpc/unary_server.py
+- In another terminal --> python ./unary_grpc/unary_client.py
 
 ### Bidirectional gRPC
 
@@ -35,10 +34,9 @@ NOTE: gRPC guarantees the ordering of messages within an individual RPC call. In
 
 ### Bidirectional gRPC Setup and Execution
 
-- cd bidirectional_grpc
-- [OPTIONAL] python -m grpc_tools.protoc --proto_path=.  ./bidirectional.proto --python_out=. --grpc_python_out=.
-- In one terminal --> python bidirectional_server.py
-- In another terminal --> python bidirectional_client.py
+- [OPTIONAL] python -m grpc_tools.protoc --proto_path=./protobufs ./protobufs/bidirectional.proto --python_out=./bidirectional_grpc --grpc_python_out=./bidirectional_grpc
+- In one terminal --> python ./bidirectional_grpc/bidirectional_server.py
+- In another terminal --> python ./bidirectional_grpc/bidirectional_client.py
 
 ## References
 
