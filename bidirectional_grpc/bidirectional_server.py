@@ -16,6 +16,7 @@ def serve():
     bidirectional_pb2_grpc.add_BidirectionalServicer_to_server(BidirectionalService(), server)
     server.add_insecure_port('[::]:50051')
     server.start()
+    print("Server is running...")
     server.wait_for_termination()
 
 
