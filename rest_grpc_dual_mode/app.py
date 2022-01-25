@@ -1,11 +1,14 @@
 from flask import Flask
+from grpc_services.grpc_utilities import grpc_server
+
 
 app = Flask(__name__)
+rest_port = 5000
 
-@app.route("/v1/get_message")
-def get_message():
-    return "This is a REST message!"
+from rest_services import rest_get_greetings
 
 if __name__ == "__main__":
-    app.run(host='0.0.0.0', port=5000, debug=True)
-    
+    grpc_server = grpc_server.serve()
+    # server.wait_for_termination()
+    print(f"REST Server is running at port {rest_port}...")
+    app.run(host='0.0.0.0', port=rest_port, debug=True)

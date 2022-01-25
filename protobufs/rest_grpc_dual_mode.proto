@@ -1,0 +1,16 @@
+syntax = "proto3";
+
+package rest_grpc_dual_mode;
+
+service GreetingsGenerator {
+    rpc GRPCGetGreetings (RequestMessage) returns (ResponseMessage) {}
+}
+
+message RequestMessage {
+    string type = 1;
+    string year = 2;
+}
+
+message ResponseMessage {
+    string message = 1;
+}
