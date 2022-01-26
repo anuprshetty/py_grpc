@@ -38,6 +38,24 @@ NOTE: gRPC guarantees the ordering of messages within an individual RPC call. In
 - In one terminal --> python ./bidirectional_grpc/bidirectional_server.py
 - In another terminal --> python ./bidirectional_grpc/bidirectional_client.py
 
+## REST and gRPC Dual Mode
+
+This POC shows working simualtaneously with both REST and gRPC services listening at different ports in the same application.
+
+### Advantages of REST and gRPC Dual Mode POC
+
+- Decouples core business logic and data communication logic (SOAP, REST, gRPC, etc.).
+- Application can be extended to any type of data communication format with minimal changes without affecting business logic.
+- Generalizing application structure (standardization) which brings many possibilities and helps in many scenarios like...
+  - Supporting many data communication formats at a time.
+  - Migrating from one data communication format to another with minimal effort, taking one chunk at a time. No need to convert all services to another format in one go. Which helps in backward compatability for older data communication format without affecting the application functionalities.
+
 ## References
 
 - [Implementing gRPC In Python](https://www.velotio.com/engineering-blog/grpc-implementation-using-python)
+- [gRPC documentation](https://grpc.io/docs/what-is-grpc/)
+- [Python gRPC documentation](https://grpc.io/docs/languages/python/)
+- [Python gRPC API reference](https://grpc.github.io/grpc/python/)
+- [Protocol Buffers](https://developers.google.com/protocol-buffers)
+- [gRPC Motivation and Design Principles](https://www.grpc.io/blog/principles/)
+- [BloomRPC tool - GUI Client for GRPC Services](https://appimage.github.io/BloomRPC/)
