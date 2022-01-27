@@ -40,7 +40,7 @@ NOTE: gRPC guarantees the ordering of messages within an individual RPC call. In
 
 ## REST and gRPC Dual Mode
 
-This POC shows working simualtaneously with both REST and gRPC services listening at different ports in the same application.
+This POC shows working simultaneously with both REST and gRPC services listening at different ports in the same application.
 
 ### Advantages of REST and gRPC Dual Mode POC
 
