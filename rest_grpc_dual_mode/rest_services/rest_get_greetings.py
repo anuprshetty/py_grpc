@@ -19,7 +19,7 @@ def rest_get_greetings():
     # REST REQUEST UNPACKING LOGIC
 
     # BUSINESS LOGIC function
-    output_message = get_greetings(input_message)
+    output_message = get_greetings(data_comm_type="REST", input_message=input_message)
     # BUSINESS LOGIC function
 
     # REST RESPONSE PACKING LOGIC

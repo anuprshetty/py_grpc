@@ -16,7 +16,7 @@ class GreetingsGeneratorService(pb2_grpc.GreetingsGeneratorServicer):
         # GRPC REQUEST UNPACKING LOGIC
 
         # BUSINESS LOGIC function
-        output_message = get_greetings(input_message)
+        output_message = get_greetings(data_comm_type="gRPC", input_message=input_message)
         # BUSINESS LOGIC function
 
         # GRPC RESPONSE PACKING LOGIC
