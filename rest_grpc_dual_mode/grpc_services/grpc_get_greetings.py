@@ -1,6 +1,7 @@
-from .grpc_utilities import rest_grpc_dual_mode_pb2_grpc as pb2_grpc
-from .grpc_utilities import rest_grpc_dual_mode_pb2 as pb2
+from .grpc_utilities.generated import rest_grpc_dual_mode_pb2_grpc as pb2_grpc
+from .grpc_utilities.generated import rest_grpc_dual_mode_pb2 as pb2
 from business_logics.get_greetings import get_greetings
+from google.protobuf import json_format
 
 
 class GreetingsGeneratorService(pb2_grpc.GreetingsGeneratorServicer):
@@ -11,16 +12,15 @@ class GreetingsGeneratorService(pb2_grpc.GreetingsGeneratorServicer):
     def GRPCGetGreetings(self, request, context):
 
         # GRPC REQUEST UNPACKING LOGIC
-        request_message = request
-        input_message = {"type": request_message.type, "year": request_message.year}
+        request_info = json_format.MessageToDict(request)
         # GRPC REQUEST UNPACKING LOGIC
 
-        # BUSINESS LOGIC function
-        output_message = get_greetings(data_comm_type="gRPC", input_message=input_message)
-        # BUSINESS LOGIC function
+        # BUSINESS LOGIC FUNCTION
+        response_info = get_greetings(**request_info)
+        # BUSINESS LOGIC FUNCTION
 
         # GRPC RESPONSE PACKING LOGIC
-        response_message = output_message
+        response = pb2.ResponseMessage(**response_info)
         # GRPC RESPONSE PACKING LOGIC
 
-        return pb2.ResponseMessage(message=response_message)
+        return response

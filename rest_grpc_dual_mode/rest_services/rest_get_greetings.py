@@ -8,22 +8,20 @@ from business_logics.get_greetings import get_greetings
 def rest_get_greetings():
 
     # REST REQUEST UNPACKING LOGIC
-    greetings_info = {}
+    request_info = {}
 
     if request.method == 'GET':
-        greetings_info = request.args # Query Strings --> ImmutableMultiDict.
+        request_info = request.args # Query Strings --> ImmutableMultiDict.
     else: # POST method
-        greetings_info = json.loads(request.data)
-
-    input_message = greetings_info
+        request_info = json.loads(request.data)
     # REST REQUEST UNPACKING LOGIC
 
-    # BUSINESS LOGIC function
-    output_message = get_greetings(data_comm_type="REST", input_message=input_message)
-    # BUSINESS LOGIC function
+    # BUSINESS LOGIC FUNCTION
+    response_info = get_greetings(**request_info)
+    # BUSINESS LOGIC FUNCTION
 
     # REST RESPONSE PACKING LOGIC
-    response = output_message
+    response = json.dumps(response_info)
     # REST RESPONSE PACKING LOGIC
 
     return response

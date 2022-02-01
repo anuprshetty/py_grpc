@@ -1,7 +1,7 @@
 import grpc
 from concurrent import futures
-from . import rest_grpc_dual_mode_pb2_grpc as pb2_grpc
-from . import rest_grpc_dual_mode_pb2 as pb2
+from .generated import rest_grpc_dual_mode_pb2_grpc as pb2_grpc
+from .generated import rest_grpc_dual_mode_pb2 as pb2
 from ..grpc_get_greetings import GreetingsGeneratorService
 
 

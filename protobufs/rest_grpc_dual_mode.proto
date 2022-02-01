@@ -7,10 +7,12 @@ service GreetingsGenerator {
 }
 
 message RequestMessage {
-    string type = 1;
-    string year = 2;
+    string dataCommType = 1;
+    string messageType = 2;
+    int32 year = 3;
 }
 
 message ResponseMessage {
-    string message = 1;
+    string greetings = 1;
+    bool messageReceived = 2;
 }

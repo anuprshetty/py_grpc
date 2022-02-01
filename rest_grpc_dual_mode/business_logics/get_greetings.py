@@ -1,11 +1,10 @@
 # BUSINESS LOGIC function
-def get_greetings(data_comm_type, input_message):
+def get_greetings(dataCommType, messageType, year):
 
-    output_message = f"Here is your greetings --> "
+    greetings = f"Here is your greetings --> Today is a special day! ({messageType}, {year})"
+    print(f"{dataCommType}: {greetings}")
 
-    for key, value in input_message.items():
-            output_message += f"({key}, {value})"
+    response_info = {"greetings": greetings, "messageReceived": True}
 
-    print(f"{data_comm_type}: {output_message}")
-    return output_message
+    return response_info
 # BUSINESS LOGIC function
