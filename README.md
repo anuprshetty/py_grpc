@@ -59,3 +59,4 @@ This POC shows working simultaneously with both REST and gRPC services listening
 - [Protocol Buffers](https://developers.google.com/protocol-buffers)
 - [gRPC Motivation and Design Principles](https://www.grpc.io/blog/principles/)
 - [BloomRPC tool - GUI Client for GRPC Services](https://appimage.github.io/BloomRPC/)
+- [Werkzeug - Werkzeug is a comprehensive WSGI web application library](https://werkzeug.palletsprojects.com/en/2.0.x/)

@@ -2,7 +2,6 @@ import grpc
 from generated import rest_grpc_dual_mode_pb2_grpc as pb2_grpc
 from generated import rest_grpc_dual_mode_pb2 as pb2
 from google.protobuf import json_format
-import json
 
 
 if __name__ == '__main__':
