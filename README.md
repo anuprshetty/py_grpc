@@ -50,6 +50,18 @@ This POC shows working simultaneously with both REST and gRPC services listening
   - Supporting many data communication formats at a time.
   - Migrating from one data communication format to another with minimal effort, taking one chunk at a time. No need to convert all services to another format in one go. Which helps in backward compatibility for older data communication format without affecting the application functionalities.
 
+## Load Testing using Locust Tool
+
+Locust tool is used to perform load testing on the application via both REST and gRPC communication.  
+**Based on the Locust performance reports, I found that performance of gRPC communication is much better than the performance of REST communication.**  
+
+**Reports Path:** *rest_grpc_dual_mode/tests/load_tests/reports/*
+
+### Locust Commands
+
+- [For REST] locust -f rest_grpc_dual_mode/tests/load_tests/rest/rest_load_test.py --host http://localhost:5000 --users <MAX_USERS> --spawn-rate <NO_OF_USERS_TO_ADD_PER_SEC>
+- - [For gRPC] locust -f rest_grpc_dual_mode/tests/load_tests/grpc/grpc_load_test.py --host http://localhost:50051 --users <MAX_USERS> --spawn-rate <NO_OF_USERS_TO_ADD_PER_SEC>
+
 ## References
 
 - [Implementing gRPC In Python](https://www.velotio.com/engineering-blog/grpc-implementation-using-python)
@@ -60,3 +72,6 @@ This POC shows working simultaneously with both REST and gRPC services listening
 - [gRPC Motivation and Design Principles](https://www.grpc.io/blog/principles/)
 - [BloomRPC tool - GUI Client for GRPC Services](https://appimage.github.io/BloomRPC/)
 - [Werkzeug - Werkzeug is a comprehensive WSGI web application library](https://werkzeug.palletsprojects.com/en/2.0.x/)
+- [Locust Tool](https://locust.io/)
+- [Locust Documentation](http://docs.locust.io/en/stable/#)
+- [Locust - Testing non-HTTP systems (gRPC)](https://docs.locust.io/en/latest/testing-other-systems.html#)
