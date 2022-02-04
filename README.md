@@ -48,7 +48,7 @@ This POC shows working simultaneously with both REST and gRPC services listening
 - Application can be extended to any type of data communication format with minimal changes without affecting business logic.
 - Generalizing application structure (standardization) which brings many possibilities and helps in many scenarios like...
   - Supporting many data communication formats at a time.
-  - Migrating from one data communication format to another with minimal effort, taking one chunk at a time. No need to convert all services to another format in one go. Which helps in backward compatability for older data communication format without affecting the application functionalities.
+  - Migrating from one data communication format to another with minimal effort, taking one chunk at a time. No need to convert all services to another format in one go. Which helps in backward compatibility for older data communication format without affecting the application functionalities.
 
 ## References
 
