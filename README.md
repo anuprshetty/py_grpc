@@ -61,7 +61,7 @@ Locust tool is used to perform load testing on the application via both REST and
 
 - [OPTIONAL] python -m grpc_tools.protoc --proto_path=./protobufs ./protobufs/rest_grpc_dual_mode.proto --python_out=./rest_grpc_dual_mode/tests/load_tests/grpc/generated --grpc_python_out=./rest_grpc_dual_mode/tests/load_tests/grpc/generated
 - [For REST] locust -f rest_grpc_dual_mode/tests/load_tests/rest/rest_load_test.py --host http://localhost:5000 --users <MAX_USERS> --spawn-rate <NO_OF_USERS_TO_ADD_PER_SEC>
-- - [For gRPC] locust -f rest_grpc_dual_mode/tests/load_tests/grpc/grpc_load_test.py --host http://localhost:50051 --users <MAX_USERS> --spawn-rate <NO_OF_USERS_TO_ADD_PER_SEC>
+- [For gRPC] locust -f rest_grpc_dual_mode/tests/load_tests/grpc/grpc_load_test.py --host http://localhost:50051 --users <MAX_USERS> --spawn-rate <NO_OF_USERS_TO_ADD_PER_SEC>
 
 ## References
 
