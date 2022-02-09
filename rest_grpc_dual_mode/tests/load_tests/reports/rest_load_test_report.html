@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Test Report for grpc_load_test.py</title>
+    <title>Test Report for rest_load_test.py</title>
     <style>
         body {
             background: #173529;
@@ -119,9 +119,9 @@ table.stats tr.total td {
 
         <div class="info">
             
-            <p>During: <span class="l10n datetime">2022-01-28 05:39:27</span> - <span class="l10n datetime">2022-01-28 05:40:16</span></p>
-            <p>Target Host: <span>http://localhost:50051</span></p>
-            <p>Script: <span>grpc_load_test.py</span></p>
+            <p>During: <span class="l10n datetime">2022-02-04 07:26:42</span> - <span class="l10n datetime">2022-02-04 07:27:44</span></p>
+            <p>Target Host: <span>http://localhost:5000</span></p>
+            <p>Script: <span>rest_load_test.py</span></p>
         </div>
 
         <div class="requests">
@@ -144,28 +144,28 @@ table.stats tr.total td {
                 <tbody>
                     
                         <tr>
-                            <td>gRPC</td>
-                            <td>GRPCGetGreetings</td>
-                            <td>98796</td>
+                            <td>POST</td>
+                            <td>/v1/get_greetings</td>
+                            <td>20465</td>
                             <td>0</td>
-                            <td>37</td>
-                            <td>0</td>
-                            <td>92</td>
-                            <td>0</td>
-                            <td>1981.4</td>
+                            <td>2</td>
+                            <td>2</td>
+                            <td>25</td>
+                            <td>107</td>
+                            <td>329.2</td>
                             <td>0.0</td>
                         </tr>
                     
                         <tr class="total">
                             <td></td>
                             <td>Aggregated</td>
-                            <td>98796</td>
+                            <td>20465</td>
                             <td>0</td>
-                            <td>37</td>
-                            <td>0</td>
-                            <td>92</td>
-                            <td>0</td>
-                            <td>1981.4</td>
+                            <td>2</td>
+                            <td>2</td>
+                            <td>25</td>
+                            <td>107</td>
+                            <td>329.2</td>
                             <td>0.0</td>
                         </tr>
                     
@@ -193,29 +193,29 @@ table.stats tr.total td {
                 <tbody>
                     
                         <tr>
-                            <td>gRPC</td>
-                            <td>GRPCGetGreetings</td>
-                            <td>41</td>
-                            <td>46</td>
-                            <td>52</td>
-                            <td>57</td>
-                            <td>64</td>
-                            <td>68</td>
-                            <td>77</td>
-                            <td>92</td>
+                            <td>POST</td>
+                            <td>/v1/get_greetings</td>
+                            <td>3</td>
+                            <td>3</td>
+                            <td>3</td>
+                            <td>3</td>
+                            <td>3</td>
+                            <td>4</td>
+                            <td>6</td>
+                            <td>25</td>
                         </tr>
                     
                         <tr class="total">
                             <td></td>
                             <td>Aggregated</td>
-                            <td>41</td>
-                            <td>46</td>
-                            <td>52</td>
-                            <td>57</td>
-                            <td>64</td>
-                            <td>68</td>
-                            <td>77</td>
-                            <td>92</td>
+                            <td>3</td>
+                            <td>3</td>
+                            <td>3</td>
+                            <td>3</td>
+                            <td>3</td>
+                            <td>4</td>
+                            <td>6</td>
+                            <td>25</td>
                         </tr>
                     
                 </tbody>
@@ -234,7 +234,7 @@ table.stats tr.total td {
 
         <div id="tasks">
             <h2>Tasks</h2>
-            <div class="tasks" data-tasks="{&quot;per_class&quot;: {&quot;GRPCUser&quot;: {&quot;ratio&quot;: 0.0, &quot;tasks&quot;: {&quot;grpc_get_greetings&quot;: {&quot;ratio&quot;: 1.0}}}}, &quot;total&quot;: {&quot;GRPCUser&quot;: {&quot;ratio&quot;: 0.0, &quot;tasks&quot;: {&quot;grpc_get_greetings&quot;: {&quot;ratio&quot;: 0.0}}}}}"></div>
+            <div class="tasks" data-tasks="{&quot;per_class&quot;: {&quot;RestUser&quot;: {&quot;ratio&quot;: 0.0, &quot;tasks&quot;: {&quot;rest_get_greetings&quot;: {&quot;ratio&quot;: 1.0}}}}, &quot;total&quot;: {&quot;RestUser&quot;: {&quot;ratio&quot;: 0.0, &quot;tasks&quot;: {&quot;rest_get_greetings&quot;: {&quot;ratio&quot;: 0.0}}}}}"></div>
         </div>
     
     </div>
@@ -497,12 +497,12 @@ updateTasks();
     <script>
         
 var stats_history = {
-    "time": ["05:39:29", "05:39:34", "05:39:39", "05:39:44", "05:39:49", "05:39:54", "05:39:59", "05:40:04", "05:40:09", "05:40:14"].map(server_time => new Date(new Date().setUTCHours(...(server_time.split(":")))).toLocaleTimeString()),
-    "user_count": [{"value": 10}, {"value": 35}, {"value": 60}, {"value": 85}, {"value": 100}, {"value": 100}, {"value": 100}, {"value": 100}, {"value": 100}, {"value": 100}],
-    "current_rps": [{"users": 10, "value": 0}, {"users": 35, "value": 2380.2}, {"users": 60, "value": 2462.5}, {"users": 85, "value": 2409.7}, {"users": 100, "value": 2071.3}, {"users": 100, "value": 1850.8}, {"users": 100, "value": 1828.2}, {"users": 100, "value": 1843.4}, {"users": 100, "value": 1852.5}, {"users": 100, "value": 1827.2}],
-    "current_fail_per_sec": [{"users": 10, "value": 0}, {"users": 35, "value": 0}, {"users": 60, "value": 0}, {"users": 85, "value": 0}, {"users": 100, "value": 0}, {"users": 100, "value": 0}, {"users": 100, "value": 0}, {"users": 100, "value": 0}, {"users": 100, "value": 0}, {"users": 100, "value": 0}],
-    "response_time_percentile_50": [{"users": 10, "value": 3}, {"users": 35, "value": 7}, {"users": 60, "value": 14}, {"users": 85, "value": 24}, {"users": 100, "value": 41}, {"users": 100, "value": 52}, {"users": 100, "value": 53}, {"users": 100, "value": 48}, {"users": 100, "value": 48}, {"users": 100, "value": 51}],
-    "response_time_percentile_95": [{"users": 10, "value": 6}, {"users": 35, "value": 15}, {"users": 60, "value": 27}, {"users": 85, "value": 42}, {"users": 100, "value": 65}, {"users": 100, "value": 70}, {"users": 100, "value": 70}, {"users": 100, "value": 68}, {"users": 100, "value": 69}, {"users": 100, "value": 73}],
+    "time": ["07:26:43", "07:26:48", "07:26:53", "07:26:58", "07:27:03", "07:27:08", "07:27:13", "07:27:18", "07:27:23", "07:27:28", "07:27:33", "07:27:38", "07:27:43"].map(server_time => new Date(new Date().setUTCHours(...(server_time.split(":")))).toLocaleTimeString()),
+    "user_count": [{"value": 1}, {"value": 1}, {"value": 1}, {"value": 1}, {"value": 1}, {"value": 1}, {"value": 1}, {"value": 1}, {"value": 1}, {"value": 1}, {"value": 1}, {"value": 1}, {"value": 1}],
+    "current_rps": [{"users": 1, "value": 0}, {"users": 1, "value": 274.5}, {"users": 1, "value": 311.3333333333333}, {"users": 1, "value": 343.0}, {"users": 1, "value": 342.1}, {"users": 1, "value": 342.1}, {"users": 1, "value": 341.8}, {"users": 1, "value": 336.8}, {"users": 1, "value": 318.0}, {"users": 1, "value": 313.9}, {"users": 1, "value": 329.4}, {"users": 1, "value": 329.3}, {"users": 1, "value": 323.4}],
+    "current_fail_per_sec": [{"users": 1, "value": 0}, {"users": 1, "value": 0}, {"users": 1, "value": 0}, {"users": 1, "value": 0}, {"users": 1, "value": 0}, {"users": 1, "value": 0}, {"users": 1, "value": 0}, {"users": 1, "value": 0}, {"users": 1, "value": 0}, {"users": 1, "value": 0}, {"users": 1, "value": 0}, {"users": 1, "value": 0}, {"users": 1, "value": 0}],
+    "response_time_percentile_50": [{"users": 1, "value": 0}, {"users": 1, "value": 3}, {"users": 1, "value": 3}, {"users": 1, "value": 3}, {"users": 1, "value": 3}, {"users": 1, "value": 3}, {"users": 1, "value": 3}, {"users": 1, "value": 3}, {"users": 1, "value": 3}, {"users": 1, "value": 3}, {"users": 1, "value": 3}, {"users": 1, "value": 3}, {"users": 1, "value": 3}],
+    "response_time_percentile_95": [{"users": 1, "value": 0}, {"users": 1, "value": 3}, {"users": 1, "value": 3}, {"users": 1, "value": 3}, {"users": 1, "value": 3}, {"users": 1, "value": 3}, {"users": 1, "value": 3}, {"users": 1, "value": 3}, {"users": 1, "value": 5}, {"users": 1, "value": 5}, {"users": 1, "value": 4}, {"users": 1, "value": 4}, {"users": 1, "value": 5}],
     "markers": [],
 };
         var rpsChart = new LocustLineChart($(".charts-container"), "Total Requests per Second", ["RPS", "Failures/s"], "reqs/s", ['#00ca5a', '#ff6d6d']);
