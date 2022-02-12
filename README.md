@@ -16,6 +16,13 @@ Implementation of gRPC in Python.
 - source venv/bin/activate
 - pip install -r requirements.txt
 
+### gRPC
+
+- In REST call --> request_message --> HTTP payload --> TCP payload --> etc.
+- But In gRPC call --> request_message --> TCP payload --> etc.
+- So when a grpc_request_message reaches server (TCP payload), the expectation is GRPC service should directly get this TCP payload and proceed.
+- But now what's happening is grpc_request_message reaches server (TCP payload). Server passes it to uwsgi which thinks that it's a http protocol payload and tries to unpack it. This might be the reason for failure.
+
 ### Unary gRPC
 
 This is a simple gRPC which works like a normal function call. It sends a single request declared in the .proto file to the server and gets back a single response from the server.
