@@ -83,3 +83,4 @@ Locust tool is used to perform load testing on the application via both REST and
 - [Locust Tool](https://locust.io/)
 - [Locust Documentation](http://docs.locust.io/en/stable/#)
 - [Locust - Testing non-HTTP systems (gRPC)](https://docs.locust.io/en/latest/testing-other-systems.html#)
+- [gRPC benchmarking and load testing tool](https://ghz.sh/)
