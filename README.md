@@ -1,18 +1,23 @@
 # Py_gRPC
 
-Implementation of gRPC in Python.
+gRPC implementation in Python.
 
-## System Requirements
+## Locust Tool - Load Testing Report
 
-- Ubuntu 20.04 LTS
+- **gRPC load testing report:**
+  ![grpc_load_test_report](media/grpc_load_test_report.png)
+- **REST load testing report:**
+  ![rest_load_test_report](media/rest_load_test_report.png)
+
+## Requirements
+
 - Python 3.6.15
-- python3-virtualenv
 
 ## Project Setup and Execution
 
 - clone py_grpc project
 - cd py_grpc
-- virtualenv -p /usr/bin/python3.6 venv
+- python -m venv venv
 - source venv/bin/activate
 - pip install -r requirements.txt
 
@@ -60,15 +65,15 @@ This POC shows working simultaneously with both REST and gRPC services listening
 ## Load Testing using Locust Tool
 
 Locust tool is used to perform load testing on the application via both REST and gRPC communication.  
-**Based on the Locust performance reports, I found that performance of gRPC communication is much better than the performance of REST communication.**  
+**Based on the Locust performance reports, I found that performance of gRPC communication is much better than the performance of REST communication.**
 
-**Reports Path:** *rest_grpc_dual_mode/tests/load_tests/reports/*
+**Reports Path:** _rest_grpc_dual_mode/tests/load_tests/reports/_
 
 ### Locust Commands
 
 - [OPTIONAL] python -m grpc_tools.protoc --proto_path=./protobufs ./protobufs/rest_grpc_dual_mode.proto --python_out=./rest_grpc_dual_mode/tests/load_tests/grpc/generated --grpc_python_out=./rest_grpc_dual_mode/tests/load_tests/grpc/generated
-- [For REST] locust -f rest_grpc_dual_mode/tests/load_tests/rest/rest_load_test.py --host http://localhost:5000 --users <MAX_USERS> --spawn-rate <NO_OF_USERS_TO_ADD_PER_SEC>
-- [For gRPC] locust -f rest_grpc_dual_mode/tests/load_tests/grpc/grpc_load_test.py --host http://localhost:50051 --users <MAX_USERS> --spawn-rate <NO_OF_USERS_TO_ADD_PER_SEC>
+- [For REST] locust -f rest_grpc_dual_mode/tests/load_tests/rest/rest_load_test.py --host <http://localhost:5000> --users <MAX_USERS> --spawn-rate <NO_OF_USERS_TO_ADD_PER_SEC>
+- [For gRPC] locust -f rest_grpc_dual_mode/tests/load_tests/grpc/grpc_load_test.py --host <http://localhost:50051> --users <MAX_USERS> --spawn-rate <NO_OF_USERS_TO_ADD_PER_SEC>
 
 ## References
 
